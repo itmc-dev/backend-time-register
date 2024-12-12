@@ -3,7 +3,8 @@ CREATE TABLE "user" (
   id SERIAL PRIMARY KEY,
   email VARCHAR(100) UNIQUE NOT NULL,
   name VARCHAR(100) NOT NULL,
-  password VARCHAR(100) NOT NULL
+  password VARCHAR(100) NOT NULL,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
 -- Create timesheet table
@@ -14,5 +15,6 @@ CREATE TABLE timesheet (
   project VARCHAR(255),
   hours_worked NUMERIC,
   description TEXT,
-  status VARCHAR(50)
+  status VARCHAR(50),
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
